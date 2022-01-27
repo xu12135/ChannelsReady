@@ -1,31 +1,32 @@
 # ChannelsReady
 快速搭建一个简易的性能监控平台
 
-准备工作
+#准备工作
 Django web框架
 Channels：使Django支持websocket
 psutil: 用于获取本地硬件信息
 echarts： 用于实现各种图表的UI库
 
 
-前端页面
+#前端页面
 通过booststrap实现，它提供来很多的主题样式，可以快速的搭建一个前端页面
 https://v3.bootcss.com/css/
 拿到的前端页面，删减完的一个简单页面
 
 
-图表制作
+#图表制作
 https://echarts.apache.org/zh/index.html
 Echarts 是一个apache开源的图表UI库，可以帮你生成各种图表。
 
-采集系统资源
+#采集系统资源
 第三方库pstil 用于获取本地硬件资源信息，CPU、内存、磁盘等信息
 import psutil 
 psutil.cpu_times() 
 psutil.cpu_count() 
 psutil.swap_memory() 
 psutil.virtual_memory()
-实时获取系统资源
+
+#实时获取系统资源
 后端：
 使用channels 来扩展django 支持websocket
 配置
