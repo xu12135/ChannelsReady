@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+    var ws = new WebSocket('ws://127.0.0.1:8000/ws/');
+
+    // 建立 web socket 连接成功触发事件
+    ws.onopen = function () {
+        var json="{'a':'1','b':'2'}"
+         ws.send(json);//可以给后台发送参数
+    };
+
+    //接收到消息的回调方法
+    ws.onmessage = function (event) {
+        alert('数据回来了额'+event.data)
+        console.log(event.data);//后台不间断发送数据，持续接收。
+    }
+
+    //断开 web socket 连接成功触发事件
+    ws.onclose = function () {
+        alert("连接已关闭...");
+    };
+</script>
+</html>
